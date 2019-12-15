@@ -40,7 +40,7 @@ public class LatihanQuiz extends javax.swing.JFrame {
              while (rs.next()) {                 
                  cboMap.put(rs.getString(2), rs.getString(1));
              }
-             for(String dsc: cboMap.keySet()){jComboBox1.addItem(dsc);}
+             for(String dsc: cboMap.keySet()){ComboBox.addItem(dsc);}
         } catch (Exception e) {
              JOptionPane.showMessageDialog(this, e.getMessage(), "Pesan", 0);
         }
@@ -69,25 +69,28 @@ public class LatihanQuiz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox();
+        text_Id = new javax.swing.JTextField();
+        text_name = new javax.swing.JTextField();
+        ComboBox = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         Ins = new javax.swing.JButton();
         Del = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        text_Id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                text_IdActionPerformed(evt);
             }
         });
 
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        ComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                ComboBoxActionPerformed(evt);
             }
         });
 
@@ -96,7 +99,7 @@ public class LatihanQuiz extends javax.swing.JFrame {
 
             },
             new String [] {
-                "c_id", "c_name", "R_name"
+                "country_id", "country_nam", "Region_name"
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -106,19 +109,25 @@ public class LatihanQuiz extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        Ins.setText("jButton1");
+        Ins.setText("Input");
         Ins.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InsActionPerformed(evt);
             }
         });
 
-        Del.setText("jButton2");
+        Del.setText("delete");
         Del.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DelActionPerformed(evt);
             }
         });
+
+        jLabel1.setText("Country_id");
+
+        jLabel2.setText("Country_name");
+
+        jLabel3.setText("Pilih Region");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,31 +139,45 @@ public class LatihanQuiz extends javax.swing.JFrame {
                         .addGap(57, 57, 57)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel3)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(text_name, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(3, 3, 3)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextField1))))
+                                .addComponent(ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(text_Id)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(147, 147, 147)
+                        .addComponent(Ins)
+                        .addGap(39, 39, 39)
+                        .addComponent(Del)))
                 .addContainerGap(90, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Ins)
-                .addGap(26, 26, 26)
-                .addComponent(Del)
-                .addGap(133, 133, 133))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(text_Id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addGap(18, 18, 18)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(text_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Ins)
                     .addComponent(Del))
@@ -166,27 +189,27 @@ public class LatihanQuiz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void text_IdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_IdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_text_IdActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxActionPerformed
         // TODO add your handling code here:
-        if (jComboBox1.getItemCount()>0) {
-            cbo = cboMap.get(jComboBox1.getSelectedItem()).toString();
+        if (ComboBox.getItemCount()>0) {
+            cbo = cboMap.get(ComboBox.getSelectedItem()).toString();
         }
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_ComboBoxActionPerformed
 
     private void InsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsActionPerformed
         // TODO add your handling code here:
-        conn.dml("insert countries values('"+jTextField1.getText()+"','"+cbo+"','"+jTextField2.getText()+"')");
+        conn.dml("insert countries values('"+text_Id.getText()+"','"+cbo+"','"+text_name.getText()+"')");
         conn.reset(jTable1);
         load_table();
     }//GEN-LAST:event_InsActionPerformed
 
     private void DelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelActionPerformed
         // TODO add your handling code here:
-        conn.dml("delete from countries where country_id = '"+jTextField1.getText()+"'");
+        conn.dml("delete from countries where country_id = '"+text_Id.getText()+"'");
         conn.reset(jTable1);
         load_table();
     }//GEN-LAST:event_DelActionPerformed
@@ -194,8 +217,8 @@ public class LatihanQuiz extends javax.swing.JFrame {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
         int pilih = jTable1.getSelectedRow();
-        jTextField1.setText((String) jTable1.getValueAt(pilih, 0));
-        jTextField2.setText((String) jTable1.getValueAt(pilih, 1));
+        text_Id.setText((String) jTable1.getValueAt(pilih, 0));
+        text_name.setText((String) jTable1.getValueAt(pilih, 1));
     }//GEN-LAST:event_jTable1MouseClicked
 
     /**
@@ -234,12 +257,15 @@ public class LatihanQuiz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox ComboBox;
     private javax.swing.JButton Del;
     private javax.swing.JButton Ins;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField text_Id;
+    private javax.swing.JTextField text_name;
     // End of variables declaration//GEN-END:variables
 }
